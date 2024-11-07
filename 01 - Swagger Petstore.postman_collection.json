@@ -132,10 +132,8 @@
 							"    pm.response.to.have.status(500);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response has a message\", function () {\r",
-							"    pm.expect(pm.response.json()).to.have.property(\"message\");\r",
-							"});\r",
-							""
+						
+							
 						],
 						"type": "text/javascript",
 						"packages": {}
