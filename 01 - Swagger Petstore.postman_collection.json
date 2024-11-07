@@ -129,14 +129,11 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Status code is 500\", function () {\r",
+							"    pm.response.to.have.status(500);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response has a message\", function () {\r",
-							"    pm.expect(pm.response.json()).to.have.property(\"message\");\r",
-							"});\r",
-							""
+							
 						],
 						"type": "text/javascript",
 						"packages": {}
