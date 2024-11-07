@@ -1,10 +1,11 @@
 {
 	"info": {
-		"_postman_id": "398b64de-e7d7-456d-8fcb-c99e4a0981fb",
+		"_postman_id": "6e99917d-85a1-4f28-ab4d-082a578f0904",
 		"name": "01 - Swagger Petstore",
 		"description": "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.\n\nContact Support:\n Email: apiteam@swagger.io",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "9027948"
+		"_exporter_id": "21273037",
+		"_collection_link": "https://gold-comet-590774.postman.co/workspace/1560a614-4d48-4df4-8b0b-857ec9a8efbb/collection/21273037-6e99917d-85a1-4f28-ab4d-082a578f0904?action=share&source=collection_link&creator=21273037"
 	},
 	"item": [
 		{
@@ -128,12 +129,14 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 500\", function () {\r",
-							"    pm.response.to.have.status(500);\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-						
-							
+							"pm.test(\"Response has a message\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property(\"message\");\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -195,7 +198,7 @@
 							"key": "file",
 							"description": "file to upload",
 							"type": "file",
-							"src": "postman-cloud:///1ef96b97-6ecc-47c0-ad14-22ddcc4f0c42"
+							"src": "postman-cloud:///1ef96ed0-e4f2-4c60-8e79-1f2140d288ac"
 						}
 					]
 				},
