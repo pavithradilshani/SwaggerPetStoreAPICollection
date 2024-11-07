@@ -1,5 +1,4 @@
 # This is a basic workflow to help you get started with Actions
-
 name: SwaggerPetStoreAPICollection
 
 # Controls when the workflow will run
@@ -24,35 +23,30 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      - name: Create dir
-        run: | 
-          mkdir HtmlReport
 
+      - name: Create dir
+        run: mkdir HtmlReport
+      
       # Install Node.js
-      - name: Install Node
-      - uses: actions/checkout@v4
-      - with: 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
           node-version: '17.x'
 
-      # Insatall Newman and Reporter
+      # Install Newman and Reporter
       - name: Install Newman
         run: |
-           npm install -g newman
-           npm install -g newman-reporter-htmlextra
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+
       # Run Collection
       - name: Run Collection
-        run: | 
-         newman run "01 - Swagger Petstore.postman_collection.json" -r htmlextra --reporter-htmlextra-export HtmlReport/report.html
-	 
+        run: |
+          newman run "01 - Swagger Petstore.postman_collection.json" -r htmlextra --reporter-htmlextra-export HtmlReport/report.html
+
       # Publish the Report
-      - name: publish report
-      - uses: actions/checkout@v4
-        with: 
-           name: Reports
-           path: HtmlReport
-      
-      
-
-          
-
-     
+      - name: Publish Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Reports
+          path: HtmlReport
