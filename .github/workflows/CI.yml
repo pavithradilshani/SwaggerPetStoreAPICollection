@@ -42,7 +42,7 @@ jobs:
       # Run Collection
       - name: Run Collection
         run: |
-          newman run "01 - Swagger Petstore.postman_collection.json" 
+          newman run "01 - Swagger Petstore.postman_collection.json"
 
       # Publish the Report
       - name: Publish Report
